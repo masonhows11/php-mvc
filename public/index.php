@@ -13,10 +13,10 @@ $router->add('/posts/create', ['controller' => 'Posts', 'action' => 'create']);
 
 
 // match the requested route
-$url = parse_url($_SERVER['REQUEST_URI'])['path'];
+$url = parse_url(strtolower($_SERVER['REQUEST_URI']))['path'];
 if ($router->match_route($url)) {
     echo '<pre/>';
-    var_dump($router->getRoutes());
+    var_dump($router->getParams());
     echo '<pre/>';
 } else {
     echo "no route found for url {$url}";
