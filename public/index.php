@@ -1,3 +1,6 @@
 <?php
 
-echo  "hello mvc php";
+
+
+
+require '../Core/Router.php';
